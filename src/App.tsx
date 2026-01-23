@@ -15,7 +15,7 @@ function App() {
     <div className="min-h-screen bg-[var(--color-bg)] text-[var(--color-text)]">
       <Header />
 
-      <main>
+      <main className='pt-24'>
         <Hero />
         <About />
         <Skills />
