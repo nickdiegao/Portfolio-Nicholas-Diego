@@ -5,3 +5,5 @@ export function Projects() {
         </section>
     ); 
 }
+
+export default Projects;
