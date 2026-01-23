@@ -1,6 +1,6 @@
 export function About() {
     return (
-        <section className="min-h-screen flex items-center justify-center">
+        <section id="about" className="py-24">
             <div className="max-w-6xl mx-auto px-6">
                 <h2 className="text-3xl font-bold mb-8">
                     Sobre Mim
