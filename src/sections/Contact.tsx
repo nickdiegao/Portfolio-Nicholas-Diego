@@ -1,7 +1,41 @@
 export function Contact() {
     return (
-        <section className="min-h-screen flex items-center justify-center">
-            <h1 className="text-3xl font-bold">Contact Section</h1>
+        <section id="contact" className="py-24">
+            <div className="max-w-6xl mx-auto px-6">
+                <h2 className="text-3xl font-bold mb-8">
+                    Contato
+                </h2>
+
+                <p className="text-gray-600 mb-10 max-w-2xl">
+                    Fique à vontade para entrar em contato comigo para oportunidades,
+                    projetos ou conversas sobre tecnologia.
+                </p>
+
+                <div className="flex flex-col sm:flex-row gap-6">
+                    <a
+                        href="mailto:nickdiegao@gmail.com"
+                        className="px-6 py-3 rounded-md border border-gray-300 font-medium text-center hover:bg-gray-100 transition"
+                    >
+                        E-mail
+                    </a>
+
+                    <a
+                        href="https://www.linkedin.com/in/nicholas-diego/"
+                        target="_blank"
+                        className="px-6 py-3 rounded-md border border-gray-300 font-medium text-center hover:bg-gray-100 transition"
+                    >
+                        LinkedIn
+                    </a>
+
+                    <a
+                        href="https://github.com/nickdiegao"
+                        target="_blank"
+                        className="px-6 py-3 rounded-md border border-gray-300 font-medium text-center hover:bg-gray-100 transition"
+                    >
+                        GitHub
+                    </a>
+                </div>
+            </div>
         </section>
     ); 
 }
