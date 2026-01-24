@@ -27,7 +27,7 @@ export function Projects() {
                             <a 
                             href="https://github.com/nickdiegao/ecoeduca"
                             target="_blank"
-                            className="font-medium text-[var(--color-primary)] hover:underline"
+                            className="font-medium text-[var(--color-primary)] hover:underline transition-colors duration-200"
                             >
                                 GitHub
                             </a>
@@ -53,7 +53,7 @@ export function Projects() {
                             <a 
                             href="https://github.com/nickdiegao/Portfolio-Nicholas-Diego"
                             target="_blank"
-                            className="font-medium text-[var(--color-primary)] hover:underline"
+                            className="font-medium text-[var(--color-primary)] hover:underline transition-colors duration-200"
                             >
                                 GitHub
                             </a>

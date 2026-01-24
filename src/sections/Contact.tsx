@@ -14,7 +14,7 @@ export function Contact() {
                 <div className="flex flex-col sm:flex-row gap-6">
                     <a
                         href="mailto:nickdiegao@gmail.com"
-                        className="px-6 py-3 rounded-md border border-gray-300 font-medium text-center hover:bg-gray-100 transition"
+                        className="px-6 py-3 rounded-md border border-gray-300 font-medium text-center hover:bg-gray-100 transition-colors duration-200"
                     >
                         E-mail
                     </a>
@@ -22,7 +22,7 @@ export function Contact() {
                     <a
                         href="https://www.linkedin.com/in/nicholas-diego/"
                         target="_blank"
-                        className="px-6 py-3 rounded-md border border-gray-300 font-medium text-center hover:bg-gray-100 transition"
+                        className="px-6 py-3 rounded-md border border-gray-300 font-medium text-center hover:bg-gray-100 transition-colors duration-200"
                     >
                         LinkedIn
                     </a>
@@ -30,7 +30,12 @@ export function Contact() {
                     <a
                         href="https://github.com/nickdiegao"
                         target="_blank"
-                        className="px-6 py-3 rounded-md border border-gray-300 font-medium text-center hover:bg-gray-100 transition"
+                        className="
+                        px-6 py-3 rounded-md
+                        border border-gray-300
+                        hover:bg-gray-100
+                        transition-colors duration-200
+                    "
                     >
                         GitHub
                     </a>
