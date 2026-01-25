@@ -1,4 +1,4 @@
-export function Projects() {
+export default function Projects() {
     return (
         <section id="projects" className="py-24 bg-[var(--bg-muted)]">
             <div className="max-w-6xl mx-auto px-6">
@@ -9,11 +9,13 @@ export function Projects() {
                 <div className="grid md:grid-cols-2 gap-12">
                     {/* ecoEduca */}
                     <div className="
-                        border border-[var(--border-subtle)]
-                        rounded-xl p-8
                         bg-[var(--bg-surface)]
-                        hover:shadow-xl
+                        border border-[var(--border-subtle)]
+                        rounded-2xl
+                        p-8
                         transition-all duration-300
+                        hover:-translate-y-1
+                        hover:shadow-2xl
                         ">
                         <h3 className="text-xl font-semibold mb-3">
                             ecoEduca
@@ -25,15 +27,15 @@ export function Projects() {
                             e deploy em nuvem utilizando serviços da AWS.
                         </p>
 
-                        <p className="text-sm text-gray-500 mb-6">
+                        <p className="text-sm text-[var(--text-secondary)] mb-6">
                             Java • Spring Boot • MySQL • AWS (EC2, RDS)
                         </p>
 
-                        <div className="flex gap-4">
-                            <a 
-                            href="https://github.com/nickdiegao/ecoeduca"
-                            target="_blank"
-                            className="font-medium text-[var(--color-primary)] hover:underline transition-colors duration-200"
+                        <div className="mt-6 pt-4 border-t border-[var(--border-subtle)]">
+                            <a
+                                href="https://github.com/nickdiegao/ecoeduca"
+                                target="_blank"
+                                className="font-medium text-[var(--accent)] hover:underline transition-colors duration-200"
                             >
                                 GitHub
                             </a>
@@ -42,11 +44,13 @@ export function Projects() {
 
                     {/*Portfolio*/}
                     <div className="
-                        border border-[var(--border-subtle)]
-                        rounded-xl p-8
-                        bg-[var(--bg-surface)]
-                        hover:shadow-xl
-                        transition-all duration-300
+                            bg-[var(--bg-surface)]
+                            border border-[var(--border-subtle)]
+                            rounded-2xl
+                            p-8
+                            transition-all duration-300
+                            hover:-translate-y-1
+                            hover:shadow-2xl
                         ">
                         <h3 className="text-xl font-semibold mb-3">
                             Portfólio Pessoal
@@ -57,15 +61,15 @@ export function Projects() {
                             e apresentação profissional. Projeto construído em React com TypeScript e Tailwind CSS.
                         </p>
 
-                        <p className="text-sm text-gray-500 mb-6">
+                        <p className="text-sm text-[var(--text-secondary)] mb-6">
                             React • TypeScript • Tailwind CSS
                         </p>
 
-                        <div className="flex gap-4">
-                            <a 
-                            href="https://github.com/nickdiegao/Portfolio-Nicholas-Diego"
-                            target="_blank"
-                            className="font-medium text-[var(--color-primary)] hover:underline transition-colors duration-200"
+                        <div className="mt-6 pt-4 border-t border-[var(--border-subtle)]">
+                            <a
+                                href="https://github.com/nickdiegao/Portfolio-Nicholas-Diego"
+                                target="_blank"
+                                className="font-medium text-[var(--accent)] hover:underline transition-colors duration-200"
                             >
                                 GitHub
                             </a>
@@ -76,5 +80,3 @@ export function Projects() {
         </section>
     ); 
 }
-
-export default Projects;
