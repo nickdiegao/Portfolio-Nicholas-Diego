@@ -1,6 +1,6 @@
 export function Skills() {
     return (
-        <section id="skills" className="py-24 bg-gray-50">
+        <section id="skills" className="py-24 bg-[var(--bg-muted)]">
             <div className="max-w-6xl mx-auto px-6">
                 <h2 className="text-3xl md:text-4xl font-bold mb-12">
                     Skills
@@ -9,7 +9,7 @@ export function Skills() {
                     {/* Backend */}
                     <div>
                         <h3 className="text-xl font-semibold mb-4">Backend</h3>
-                        <ul className="space-y-2 text-gray-600">
+                        <ul className="space-y-2 text-[var(--text-secondary)]">
                             <li>Java</li>
                             <li>Spring Boot</li>
                             <li>APIs Rest</li>
@@ -20,7 +20,7 @@ export function Skills() {
                     {/* Banco de Dados */}
                     <div>
                         <h3 className="text-xl font-semibold mb-4">Banco de Dados</h3>
-                        <ul className="space-y-2 text-gray-600">
+                        <ul className="space-y-2 text-[var(--text-secondary)]">
                             <li>PostgreSQL</li>
                             <li>MySQL</li>  
                             <li>MongoDB</li>
@@ -31,7 +31,7 @@ export function Skills() {
                     {/* Frontend */}
                     <div>
                         <h3 className="text-xl font-semibold mb-4">Frontend</h3>
-                        <ul className="space-y-2 text-gray-600">
+                        <ul className="space-y-2 text-[var(--text-secondary)]">
                             <li>React</li>
                             <li>TypeScript</li>
                             <li>Tailwind CSS</li>
@@ -42,7 +42,7 @@ export function Skills() {
                     {/* Ferramentas */}
                     <div>
                         <h3 className="text-xl font-semibold mb-4">Ferramentas</h3>
-                        <ul className="space-y-2 text-gray-600">
+                        <ul className="space-y-2 text-[var(--text-secondary)]">
                             <li>Git / GitHub</li>
                             <li>Docker</li>
                             <li>AWS (EC2, RDS)</li>

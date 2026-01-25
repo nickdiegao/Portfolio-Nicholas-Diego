@@ -1,6 +1,6 @@
 export function Projects() {
     return (
-        <section id="projects" className="py-24 bg-gray-50">
+        <section id="projects" className="py-24 bg-[var(--bg-muted)]">
             <div className="max-w-6xl mx-auto px-6">
                 <h2 className="text-3xl md:text-4xl font-bold mb-12">
                     Projetos
@@ -8,12 +8,18 @@ export function Projects() {
 
                 <div className="grid md:grid-cols-2 gap-12">
                     {/* ecoEduca */}
-                    <div className="border rounded-lg p-6 bg-white">
+                    <div className="
+                        border border-[var(--border-subtle)]
+                        rounded-xl p-8
+                        bg-[var(--bg-surface)]
+                        hover:shadow-xl
+                        transition-all duration-300
+                        ">
                         <h3 className="text-xl font-semibold mb-3">
                             ecoEduca
                         </h3>
 
-                        <p className="text-gray-600 mb-4">
+                        <p className="text-[var(--text-secondary)] mb-4">
                             Aplicação voltada à educação ambiental, com foco em conscientização e descarte correto
                             de resíduos. O projeto possui backend em Java com Spring Boot, banco de dados relacional
                             e deploy em nuvem utilizando serviços da AWS.
@@ -35,12 +41,18 @@ export function Projects() {
                     </div>
 
                     {/*Portfolio*/}
-                    <div className="border rounded-lg p-6 bg-white">
+                    <div className="
+                        border border-[var(--border-subtle)]
+                        rounded-xl p-8
+                        bg-[var(--bg-surface)]
+                        hover:shadow-xl
+                        transition-all duration-300
+                        ">
                         <h3 className="text-xl font-semibold mb-3">
                             Portfólio Pessoal
                         </h3>
 
-                        <p className="text-gray-600 mb-4">
+                        <p className="text-[var(--text-secondary)] mb-4">
                             Portfólio pessoal desenvolvido como landing-page, com foco em clareza, organização
                             e apresentação profissional. Projeto construído em React com TypeScript e Tailwind CSS.
                         </p>

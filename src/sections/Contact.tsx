@@ -6,7 +6,7 @@ export function Contact() {
                     Contato
                 </h2>
 
-                <p className="text-gray-600 mb-10 max-w-2xl">
+                <p className="text-[var(--text-secondary)] mb-10 max-w-2xl">
                     Fique à vontade para entrar em contato comigo para oportunidades,
                     projetos ou conversas sobre tecnologia.
                 </p>

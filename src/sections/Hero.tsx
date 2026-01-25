@@ -6,7 +6,7 @@ export function Hero() {
                     Nicholas Diego de Lira Veloso
                 </h1>
 
-                <h2 className="text-lg sm:text-xl md:text-2xl text-gray-600 mb-6 max-w-2xl">
+                <h2 className="text-lg sm:text-xl md:text-2xl text-[var(--text-secondary)] mb-6 max-w-2xl">
                     Desenvolvedor Backend com foco em Java e Spring Boot, contruindo soluções modernas e escaláveis.
                 </h2>
 

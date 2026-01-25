@@ -6,7 +6,7 @@ export function About() {
                     Sobre Mim
                 </h2>
 
-                <div className="max-w-3xl text-gray-600 leading-relaxed space-y-4">
+                <div className="max-w-3xl text-[var(--text-secondary)] leading-relaxed space-y-4">
                     <p>
                         Sou formado em Análise e Desenvolvimento de Sistemas e Técnico em Informática,
                         com atuação na área de tecnologia e foco em desenvolvimento backend.

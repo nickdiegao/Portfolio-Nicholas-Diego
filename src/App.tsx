@@ -12,7 +12,7 @@ import Experience from './sections/Experience'
 function App() {
 
   return (
-    <div className="min-h-screen bg-[var(--color-bg)] text-[var(--color-text)]">
+    <div className="min-h-screen bg-[var(--color-bg)] text-[var(--text-primary)]">
       <Header />
 
       <main className='pt-24'>

@@ -6,7 +6,7 @@ export function Experience() {
                     Experiência
                 </h2>
 
-                <div className="max-w-3xl text-gray-600 leading-relaxed space-y-4">
+                <div className="max-w-3xl text-[var(--text-secondary)] leading-relaxed space-y-4">
                     <p>
                         Atuo como Técnico de Operações de TI, com experiência em suporte N1, N2 e N3,
                         atuando diretamente em ambientes corporativos e sistemas em produção.
