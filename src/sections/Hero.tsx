@@ -1,24 +1,82 @@
+import { useLayoutEffect, useRef } from "react";
+import { gsap } from "gsap";
+
 export default function Hero() {
+    const containerRef = useRef<HTMLDivElement>(null);
+    const titleRef = useRef<HTMLHeadingElement>(null);
+    const subtitleRef = useRef<HTMLHeadingElement>(null);
+    const metaRef = useRef<HTMLParagraphElement>(null);
+    const ctaRef = useRef<HTMLDivElement>(null);
+    const visualRef = useRef<HTMLDivElement>(null);
+
+    useLayoutEffect(() => {
+    const prefersReducedMotion = window.matchMedia(
+        "(prefers-reduced-motion: reduce)"
+    ).matches;
+
+    if (prefersReducedMotion) return;
+
+    let ctx = gsap.context(() => {
+        gsap.set(
+        [
+            titleRef.current,
+            subtitleRef.current,
+            metaRef.current,
+            ctaRef.current,
+            visualRef.current,
+        ],
+        { opacity: 0, y: 20 }
+        );
+
+        gsap.timeline({ defaults: { ease: "power2.out" } })
+        .to(titleRef.current, { opacity: 1, y: 0, duration: 0.6 })
+        .to(subtitleRef.current, { opacity: 1, y: 0, duration: 0.5 }, "-=0.3")
+        .to(metaRef.current, { opacity: 1, y: 0, duration: 0.4 }, "-=0.25")
+        .to(ctaRef.current, { opacity: 1, y: 0, duration: 0.4 }, "-=0.2")
+        .to(
+            visualRef.current,
+            { opacity: 1, y: 0, scale: 1, duration: 0.6 },
+            "-=0.4"
+        );
+    }, containerRef);
+
+    return () => {
+        ctx.revert(); // <-- ESSENCIAL
+    };
+    }, []);
+
+
     return (
         <section className="min-h-screen flex items-center">
-        <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
-
+        <div
+            ref={containerRef}
+            className="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center"
+        >
             {/* Texto */}
             <div>
-            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold leading-tight mb-6">
+            <h1
+                ref={titleRef}
+                className="text-4xl sm:text-5xl md:text-6xl font-bold leading-tight mb-6"
+            >
                 Nicholas Diego
             </h1>
 
-            <h2 className="text-lg sm:text-xl md:text-2xl text-[var(--text-secondary)] mb-8 max-w-xl">
+            <h2
+                ref={subtitleRef}
+                className="text-lg sm:text-xl md:text-2xl text-[var(--text-secondary)] mb-8 max-w-xl"
+            >
                 Desenvolvedor Backend com foco em Java e Spring Boot,
                 construindo soluções modernas e escaláveis.
             </h2>
 
-            <p className="text-sm text-[var(--text-secondary)] mb-10">
+            <p
+                ref={metaRef}
+                className="text-sm text-[var(--text-secondary)] mb-10"
+            >
                 Java • Spring Boot • PostgreSQL • React • Tailwind CSS
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-4">
+            <div ref={ctaRef} className="flex flex-col sm:flex-row gap-4">
                 <a
                 href="#projects"
                 className="
@@ -47,7 +105,7 @@ export default function Hero() {
             </div>
 
             {/* Bloco visual */}
-            <div className="hidden md:block">
+            <div ref={visualRef} className="hidden md:block">
             <div
                 className="
                 w-full h-80
@@ -57,8 +115,7 @@ export default function Hero() {
                 "
             />
             </div>
-
         </div>
-        </section>
-    )
+    </section>
+  );
 }
