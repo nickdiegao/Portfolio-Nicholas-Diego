@@ -1,14 +1,38 @@
+import { useRef } from "react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
+
 export default function Projects() {
+    const sectionRef = useRef<HTMLElement>(null);
+
+    gsap.set(".reveal", { opacity: 0, y: 20 });
+
+    gsap.to(".reveal", {
+    opacity: 1,
+    y: 0,
+    duration: 0.6,
+    ease: "power2.out",
+    stagger: 0.08,
+    scrollTrigger: {
+        trigger: sectionRef.current,
+        start: "top 75%",
+        once: true,
+    },
+    });
+
     return (
         <section id="projects" className="py-24 bg-[var(--bg-muted)]">
-            <div className="max-w-6xl mx-auto px-6">
+            <div className="reveal max-w-6xl mx-auto px-6">
                 <h2 className="text-3xl md:text-4xl font-bold mb-12">
                     Projetos
                 </h2>
 
-                <div className="grid md:grid-cols-2 gap-12">
+                <div className="reveal grid md:grid-cols-2 gap-12">
                     {/* ecoEduca */}
                     <div className="
+                        reveal
                         bg-[var(--bg-surface)]
                         border border-[var(--border-subtle)]
                         rounded-2xl
@@ -44,6 +68,7 @@ export default function Projects() {
 
                     {/*Portfolio*/}
                     <div className="
+                            reveal
                             bg-[var(--bg-surface)]
                             border border-[var(--border-subtle)]
                             rounded-2xl

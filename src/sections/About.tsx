@@ -1,10 +1,48 @@
+import { useLayoutEffect, useRef } from "react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
+
 export default function About() {
+  const sectionRef = useRef<HTMLElement>(null);
+  const contentRef = useRef<HTMLDivElement>(null);
+
+  useLayoutEffect(() => {
+    const prefersReducedMotion = window.matchMedia(
+      "(prefers-reduced-motion: reduce)"
+    ).matches;
+
+    if (prefersReducedMotion) return;
+
+    const ctx = gsap.context(() => {
+      gsap.set(contentRef.current, { opacity: 0, y: 24 });
+      
+      gsap.to(contentRef.current, {
+        opacity: 1,
+        y: 0,
+        duration: 0.7,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: "top 75%",
+          once: true,
+        },
+      });
+    }, sectionRef);
+
+    return () => ctx.revert();
+  }, []); 
+
   return (
-    <section id="about" className="py-24">
-      <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
+    <section ref={sectionRef} id="about" className="py-24">
+      <div className="max-w-6xl mx-auto px-6">
         
         {/* Foto */}
-        <div className="flex justify-center md:justify-start">
+        <div 
+          className="flex justify-center md:justify-start"
+          ref={contentRef}
+        >
           <img
             src="/profile.jpeg"
             alt="Nicholas Diego"
