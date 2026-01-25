@@ -35,7 +35,7 @@ export default function About() {
   }, []); 
 
   return (
-    <section ref={sectionRef} id="about" className="py-24">
+    <section ref={sectionRef} id="about" className="py-24 scroll-mt-24">
       <div className="max-w-6xl mx-auto px-6">
         
         {/* Foto */}

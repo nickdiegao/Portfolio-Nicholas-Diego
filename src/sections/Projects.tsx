@@ -1,35 +1,49 @@
-import { useRef } from "react";
+import { useLayoutEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
 export default function Projects() {
-    const sectionRef = useRef<HTMLElement>(null);
+  const sectionRef = useRef<HTMLElement>(null);
+  const contentRef = useRef<HTMLDivElement>(null);
 
-    gsap.set(".reveal", { opacity: 0, y: 20 });
+    useLayoutEffect(() => {
+    const prefersReducedMotion = window.matchMedia(
+        "(prefers-reduced-motion: reduce)"
+    ).matches;
 
-    gsap.to(".reveal", {
-    opacity: 1,
-    y: 0,
-    duration: 0.6,
-    ease: "power2.out",
-    stagger: 0.08,
-    scrollTrigger: {
-        trigger: sectionRef.current,
-        start: "top 75%",
-        once: true,
-    },
-    });
+    if (prefersReducedMotion) return;
+
+    const ctx = gsap.context(() => {
+        const items = contentRef.current?.querySelectorAll(".reveal");
+        if (!items || items.length === 0) return;
+
+        gsap.to(items, {
+        opacity: 1,
+        y: 0,
+        duration: 0.6,
+        ease: "power2.out",
+        stagger: 0.08,
+        scrollTrigger: {
+            trigger: sectionRef.current,
+            start: "top 85%",
+            once: true,
+        },
+        });
+    }, sectionRef);
+
+    return () => ctx.revert();
+    }, []);
 
     return (
-        <section id="projects" className="py-24 bg-[var(--bg-muted)]">
-            <div className="reveal max-w-6xl mx-auto px-6">
-                <h2 className="text-3xl md:text-4xl font-bold mb-12">
+        <section ref={sectionRef} id="projects" className="py-24 bg-[var(--bg-muted)] scroll-mt-24">
+            <div ref={contentRef} className="max-w-6xl mx-auto px-6">
+                <h2 className="reveal text-3xl md:text-4xl font-bold mb-12">
                     Projetos
                 </h2>
 
-                <div className="reveal grid md:grid-cols-2 gap-12">
+                <div className="grid md:grid-cols-2 gap-12">
                     {/* ecoEduca */}
                     <div className="
                         reveal
@@ -37,7 +51,7 @@ export default function Projects() {
                         border border-[var(--border-subtle)]
                         rounded-2xl
                         p-8
-                        transition-all duration-300
+                        transition-all duration-250
                         hover:-translate-y-1
                         hover:shadow-2xl
                         ">
@@ -73,7 +87,7 @@ export default function Projects() {
                             border border-[var(--border-subtle)]
                             rounded-2xl
                             p-8
-                            transition-all duration-300
+                            transition-all duration-250
                             hover:-translate-y-1
                             hover:shadow-2xl
                         ">

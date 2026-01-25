@@ -1,6 +1,6 @@
 export default function Skills() {
   return (
-    <section id="skills" className="py-24 bg-[var(--bg-muted)]">
+    <section id="skills" className="py-24 bg-[var(--bg-muted)] scroll-mt-24">
       <div className="max-w-6xl mx-auto px-6">
         <h2 className="text-3xl md:text-4xl font-bold mb-12">
           Skills
