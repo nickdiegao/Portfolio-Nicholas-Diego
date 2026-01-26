@@ -25,7 +25,7 @@ export default function Hero() {
             ctaRef.current,
             visualRef.current,
         ],
-        { opacity: 0, y: 20 }
+        { opacity: 0, y: 12 }
         );
 
         gsap.timeline({ defaults: { ease: "power2.out" } })
@@ -41,13 +41,31 @@ export default function Hero() {
     }, containerRef);
 
     return () => {
-        ctx.revert(); // <-- ESSENCIAL
-    };
-    }, []);
+                ctx.revert(); // <-- ESSENCIAL
+            };
+            }, []);
 
+            function scrollToSection(
+            e: React.MouseEvent<HTMLButtonElement | HTMLAnchorElement>,
+            id: string
+        ) {
+            e.preventDefault();
+
+            gsap.to(window, {
+            duration: 0.8,
+            ease: "power2.out",
+            scrollTo: {
+                y: `#${id}`,
+                offsetY: 96,
+            },
+            onComplete: () => {
+                ScrollTrigger.refresh();
+            },
+        });
+    }
 
     return (
-        <section className="min-h-screen flex items-center">
+        <section className="min-h-screen flex items-center pt-28">
         <div
             ref={containerRef}
             className="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center"
@@ -56,7 +74,7 @@ export default function Hero() {
             <div>
             <h1
                 ref={titleRef}
-                className="text-4xl sm:text-5xl md:text-6xl font-bold leading-tight mb-6"
+                className="text-3xl sm:text-5xl md:text-6xl font-bold leading-tight mb-6"
             >
                 Nicholas Diego
             </h1>
@@ -78,8 +96,9 @@ export default function Hero() {
 
             <div ref={ctaRef} className="flex flex-col sm:flex-row gap-4">
                 <a
-                href="#projects"
+                onClick={(e) => scrollToSection(e, "projects")}
                 className="
+                    w-full sm:w-auto
                     px-8 py-4 rounded-lg
                     bg-[var(--accent)] text-black font-semibold
                     hover:opacity-90
@@ -93,6 +112,7 @@ export default function Hero() {
                 href="https://github.com/nickdiegao"
                 target="_blank"
                 className="
+                    w-full sm:w-auto
                     px-8 py-4 rounded-lg
                     border border-[var(--border-subtle)]
                     hover:bg-[var(--bg-surface)]

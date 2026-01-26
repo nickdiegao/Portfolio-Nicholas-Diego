@@ -7,7 +7,7 @@ gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 export default function Header() {
 
   function scrollToSection(
-    e: React.MouseEvent<HTMLAnchorElement>,
+    e: React.MouseEvent<HTMLButtonElement | HTMLAnchorElement>,
     id: string
   ) {
     e.preventDefault();
@@ -17,7 +17,7 @@ export default function Header() {
       ease: "power2.out",
       scrollTo: {
         y: `#${id}`,
-        offsetY: 96, // altura do header
+        offsetY: 96,
       },
       onComplete: () => {
         ScrollTrigger.refresh();
@@ -33,10 +33,13 @@ export default function Header() {
       border-b border-[var(--border-subtle)]
     ">
       <div className="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+
+        {/* Nome */}
         <span className="font-semibold">
           Nicholas Diego de Lira Veloso
         </span>
 
+        {/* Desktop Nav */}
         <nav className="hidden md:flex gap-6 text-sm">
           <a
             href="#about"
@@ -45,7 +48,6 @@ export default function Header() {
           >
             Sobre
           </a>
-
           <a
             href="#skills"
             onClick={(e) => scrollToSection(e, "skills")}
@@ -78,6 +80,22 @@ export default function Header() {
             Contato
           </a>
         </nav>
+
+        {/* Mobile CTA */}
+        <div className="md:hidden">
+          <button
+            onClick={(e) => scrollToSection(e, "contact")}
+            className="
+              px-4 py-2 rounded-md
+              bg-[var(--accent)]
+              text-black text-sm font-medium
+              focus:outline-none focus-visible:ring-2
+              focus-visible:ring-[var(--accent)]
+            "
+          >
+            Contato
+          </button>
+        </div>
       </div>
     </header>
   );
