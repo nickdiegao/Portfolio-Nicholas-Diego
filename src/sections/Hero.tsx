@@ -68,10 +68,15 @@ export default function Hero() {
         <section className="min-h-screen flex items-center pt-28">
         <div
             ref={containerRef}
-            className="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center"
+            className="
+                max-w-6xl mx-auto px-6
+                flex flex-col md:flex-row
+                items-center
+                gap-16
+            "
         >
             {/* Texto */}
-            <div>
+            <div className="w-full md:w-1/2">
             <h1
                 ref={titleRef}
                 className="text-3xl sm:text-5xl md:text-6xl font-bold leading-tight mb-6"
@@ -125,15 +130,41 @@ export default function Hero() {
             </div>
 
             {/* Bloco visual */}
-            <div ref={visualRef} className="hidden md:block">
-            <div
-                className="
-                w-full h-80
-                rounded-2xl
-                bg-gradient-to-br from-[var(--bg-surface)] to-[var(--bg-muted)]
-                border border-[var(--border-subtle)]
-                "
-            />
+            <div ref={visualRef} className="hidden md:flex w-full md:w-1/2 ustify-center flex-1">
+                <div
+                    className="
+                        w-full max-w-md
+                        h-80
+                        rounded-2xl
+                        bg-[var(--bg-surface)]
+                        border border-[var(--border-subtle)]
+                        p-6
+                        text-[13px] font-mono 
+                        text-[var(--text-secondary)]
+                        leading-relaxed
+                        relative
+                        overflow-hidden
+                    "
+                >
+<pre className="
+    inset-0 opacity-20 bg-[linear-gradient(rgba(255,255,255,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.05)_1px,transparent_1px)] bg-[size:32px_32px]"
+>
+  {`
+@Service
+public class PortfolioService {
+
+    public Solution buildSolution(Scale scale) {
+        return Solution.builder()
+            .cleanArchitecture(true)
+        .scalable(true)
+            .maintainable(true)
+            .cloudReady(true)
+            .build();
+    }
+}
+`.trim()}
+</pre>
+                </div>
             </div>
         </div>
     </section>
