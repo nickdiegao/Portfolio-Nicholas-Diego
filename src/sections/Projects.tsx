@@ -50,7 +50,7 @@ export default function Projects() {
                         bg-[var(--bg-surface)]
                         border border-[var(--border-subtle)]
                         rounded-2xl
-                        p-8
+                        p-8 sm:p-6
                         transition-all duration-250
                         hover:-translate-y-1
                         hover:shadow-2xl
@@ -59,7 +59,7 @@ export default function Projects() {
                             ecoEduca
                         </h3>
 
-                        <p className="text-[var(--text-secondary)] mb-4">
+                        <p className="text-sm text-[var(--text-secondary)] mb-4">
                             Aplicação voltada à educação ambiental, com foco em conscientização e descarte correto
                             de resíduos. O projeto possui backend em Java com Spring Boot, banco de dados relacional
                             e deploy em nuvem utilizando serviços da AWS.
@@ -86,7 +86,7 @@ export default function Projects() {
                             bg-[var(--bg-surface)]
                             border border-[var(--border-subtle)]
                             rounded-2xl
-                            p-8
+                            p-8 sm:p-6
                             transition-all duration-250
                             hover:-translate-y-1
                             hover:shadow-2xl
@@ -95,7 +95,7 @@ export default function Projects() {
                             Portfólio Pessoal
                         </h3>
 
-                        <p className="text-[var(--text-secondary)] mb-4">
+                        <p className="text-sm text-[var(--text-secondary)] mb-4">
                             Portfólio pessoal desenvolvido como landing-page, com foco em clareza, organização
                             e apresentação profissional. Projeto construído em React com TypeScript e Tailwind CSS.
                         </p>
@@ -108,7 +108,7 @@ export default function Projects() {
                             <a
                                 href="https://github.com/nickdiegao/Portfolio-Nicholas-Diego"
                                 target="_blank"
-                                className="font-medium text-[var(--accent)] hover:underline transition-colors duration-200"
+                                className="inline-block px-4 py-2 rounded-md font-medium text-[var(--accent)] hover:underline transition-colors duration-200"
                             >
                                 GitHub
                             </a>
