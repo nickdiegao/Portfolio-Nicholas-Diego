@@ -54,7 +54,7 @@ Clone o repositório:
 
 ```bash
 git clone https://github.com/nickdiegao/Portfolio-Nicholas-Diego.git
-
+```
 
 Acesse a pasta do projeto:
 
