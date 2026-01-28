@@ -36,6 +36,7 @@ O foco do portfólio é destacar minha atuação como Desenvolvedor Backend, bem
 
 ## Estrutura do Projeto
 
+```bash
 src/
 ├─ components/
 │  ├─ Header
@@ -47,6 +48,7 @@ src/
 ├─ styles/
 ├─ assets/
 └─ App.tsx
+```
 
 ## Como Executar Localmente
 
