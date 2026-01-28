@@ -44,7 +44,7 @@ export default function About() {
           ref={contentRef}
         >
           <img
-            src="/profile.jpeg"
+            src="/profile.jpg"
             alt="Nicholas Diego"
             className="
               w-64 h-64 object-cover

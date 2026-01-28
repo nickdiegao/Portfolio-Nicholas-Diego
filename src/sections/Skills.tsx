@@ -53,7 +53,12 @@ export default function Skills() {
 
           <div className="grid gap-6">
             {/* Backend */}
-            <div className="reveal bg-[var(--bg-surface)] border border-[var(--border-subtle)] rounded-2xl p-6">
+            <div className="reveal bg-[var(--bg-surface)] border border-[var(--border-subtle)] rounded-2xl p-6 
+              transition-all duration-300 ease-out
+              hover:-translate-y-[2px]
+              hover:shadow-xl
+              hover:border-[var(--accent)]
+            ">
               <h3 className="font-semibold mb-3">Backend</h3>
               <ul className="text-[var(--text-secondary)] space-y-1">
                 <li>Java</li>
@@ -64,7 +69,12 @@ export default function Skills() {
             </div>
 
             {/* Frontend */}
-            <div className="reveal bg-[var(--bg-surface)] border border-[var(--border-subtle)] rounded-2xl p-6">
+            <div className="reveal bg-[var(--bg-surface)] border border-[var(--border-subtle)] rounded-2xl p-6
+              transition-all duration-300 ease-out
+              hover:-translate-y-[2px]
+              hover:shadow-xl
+              hover:border-[var(--accent)]
+            ">
               <h3 className="font-semibold mb-3">Frontend</h3>
               <ul className="text-[var(--text-secondary)] space-y-1">
                 <li>React</li>
@@ -74,7 +84,12 @@ export default function Skills() {
             </div>
 
             {/* Banco de Dados */}
-            <div className="reveal bg-[var(--bg-surface)] border border-[var(--border-subtle)] rounded-2xl p-6">
+            <div className="reveal bg-[var(--bg-surface)] border border-[var(--border-subtle)] rounded-2xl p-6
+              transition-all duration-300 ease-out
+              hover:-translate-y-[2px]
+              hover:shadow-xl
+              hover:border-[var(--accent)]
+            ">
               <h3 className="font-semibold mb-3">Banco de Dados</h3>
               <ul className="text-[var(--text-secondary)] space-y-1">
                 <li>PostgreSQL</li>
@@ -84,7 +99,12 @@ export default function Skills() {
             </div>
 
             {/* Ferramentas */}
-            <div className="reveal bg-[var(--bg-surface)] border border-[var(--border-subtle)] rounded-2xl p-6">
+            <div className="reveal bg-[var(--bg-surface)] border border-[var(--border-subtle)] rounded-2xl p-6
+              transition-all duration-300 ease-out
+              hover:-translate-y-[2px]
+              hover:shadow-xl
+              hover:border-[var(--accent)]
+            ">
               <h3 className="font-semibold mb-3">Ferramentas & Conceitos</h3>
               <ul className="text-[var(--text-secondary)] space-y-1">
                 <li>AWS (EC2, RDS)</li>
@@ -97,29 +117,55 @@ export default function Skills() {
         </div>
 
         {/* Quadro visual */}
-        <div className="reveal">
-          <div
-            className="
-              relative w-full h-96
-              rounded-2xl
-              bg-gradient-to-br from-[#0b1220] to-[#111827]
-              border border-[var(--border-subtle)]
-              overflow-hidden
-            "
-          >
-            {/* Grid sutil */}
-            <div className="absolute inset-0 opacity-20 bg-[linear-gradient(rgba(255,255,255,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.05)_1px,transparent_1px)] bg-[size:32px_32px]" />
+       <div className="hidden md:flex w-full justify-center flex-1">
+                <div
+                  className="
+                    relative
+                    w-full max-w-md h-80
+                    rounded-2xl
+                    bg-[var(--bg-surface)]
+                    border border-[var(--border-subtle)]
+                    p-6
+                    overflow-hidden
+                    font-mono text-[13px]
+                    text-[var(--text-secondary)]
+                  "
+                >
 
-            {/* Hint técnico */}
-            <div className="absolute bottom-6 left-6 right-6 font-mono text-xs text-white/30 leading-relaxed">
-              class SkillEngine &#123;<br />
-              &nbsp;&nbsp;build(scale) &#123; ... &#125;<br />
-              &#125;
+              {/* GRID QUADRICULADO */}
+              <div
+                className="
+                  absolute inset-0 pointer-events-none opacity-90 
+                "
+                style={{
+                  backgroundImage: `
+                    linear-gradient(rgba(148,163,184,0.04) 1px, transparent 1px),
+                    linear-gradient(90deg, rgba(148,163,184,0.04) 1px, transparent 1px)
+                  `,
+                  backgroundSize: "28px 28px",
+                }}
+              />
+
+              {/* CÓDIGO */}
+              <pre className="relative z-10 leading-relaxed opacity-70 right-20">
+{`  @Configuration
+          @EnableJpaRepositories
+                  public class PersistenceConfig {
+    
+  @Bean
+                      DataSource dataSource() {
+                      return DataSourceBuilder.create()
+                .url(env("DB_URL"))
+                      .username(env("DB_USER"))
+                      .password(env("DB_PASS"))
+      .build();
+      }
+  }
+`}
+                </pre>
+              </div>
             </div>
-          </div>
         </div>
-
-      </div>
     </section>
   );
 }

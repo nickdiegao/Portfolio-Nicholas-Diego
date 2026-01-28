@@ -33,7 +33,7 @@ export default function Projects() {
         });
     }, sectionRef);
 
-    return () => ctx.revert();
+    return () => ctx.revert();   
     }, []);
 
     return (
@@ -73,7 +73,7 @@ export default function Projects() {
                             <a
                                 href="https://github.com/nickdiegao/ecoeduca"
                                 target="_blank"
-                                className="font-medium text-[var(--accent)] hover:underline transition-colors duration-200"
+                                className="font-medium text-[var(--text-primary)] hover:underline hover:text-[var(--accent)] transition-colors duration-200"
                             >
                                 GitHub
                             </a>
@@ -108,7 +108,7 @@ export default function Projects() {
                             <a
                                 href="https://github.com/nickdiegao/Portfolio-Nicholas-Diego"
                                 target="_blank"
-                                className="inline-block px-4 py-2 rounded-md font-medium text-[var(--accent)] hover:underline transition-colors duration-200"
+                                className="inline-block px-4 py-2 rounded-md font-medium text-[var(--text-primary)] hover:underline hover:text-[var(--accent)] transition-colors duration-200"
                             >
                                 GitHub
                             </a>

@@ -8,6 +8,8 @@ export default function Hero() {
     const metaRef = useRef<HTMLParagraphElement>(null);
     const ctaRef = useRef<HTMLDivElement>(null);
     const visualRef = useRef<HTMLDivElement>(null);
+    const gridRef = useRef<HTMLDivElement>(null);
+    const cursorRef = useRef<HTMLSpanElement>(null);
 
     useLayoutEffect(() => {
     const prefersReducedMotion = window.matchMedia(
@@ -15,7 +17,7 @@ export default function Hero() {
     ).matches;
 
     if (prefersReducedMotion) return;
-
+        
     let ctx = gsap.context(() => {
         gsap.set(
         [
@@ -39,6 +41,7 @@ export default function Hero() {
             "-=0.4"
         );
     }, containerRef);
+
 
     return () => {
                 ctx.revert(); // <-- ESSENCIAL
@@ -130,41 +133,51 @@ export default function Hero() {
             </div>
 
             {/* Bloco visual */}
-            <div ref={visualRef} className="hidden md:flex w-full md:w-1/2 ustify-center flex-1">
-                <div
-                    className="
-                        w-full max-w-md
-                        h-80
-                        rounded-2xl
-                        bg-[var(--bg-surface)]
-                        border border-[var(--border-subtle)]
-                        p-6
-                        text-[13px] font-mono 
-                        text-[var(--text-secondary)]
-                        leading-relaxed
-                        relative
-                        overflow-hidden
-                    "
-                >
-<pre className="
-    inset-0 opacity-20 bg-[linear-gradient(rgba(255,255,255,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.05)_1px,transparent_1px)] bg-[size:32px_32px]"
->
-  {`
-@Service
-public class PortfolioService {
+            <div
+            ref={visualRef}
+            className="
+                w-full max-w-md h-80
+                rounded-2xl
+                bg-[var(--bg-surface)]
+                border border-[var(--border-subtle)]
+                p-6
+                relative overflow-hidden
+                font-mono text-[13px]
+                text-[var(--text-secondary)]
+                animate-float
+                hidden md:block
+            "
+            >
+            {/* GRID LAYER */}
+            <div
+                ref={gridRef}
+                className="absolute -inset-12 pointer-events-none"
+                style={{
+                backgroundImage: `
+                    linear-gradient(rgba(99,102,241,0.06) 1px, transparent 1px),
+                    linear-gradient(90deg, rgba(99,102,241,0.06) 1px, transparent 1px)
+                `,
+                backgroundSize: "24px 24px",
+                }}
+            />
 
-    public Solution buildSolution(Scale scale) {
-        return Solution.builder()
-            .cleanArchitecture(true)
-        .scalable(true)
-            .maintainable(true)
-            .cloudReady(true)
-            .build();
-    }
-}
-`.trim()}
-</pre>
-                </div>
+            {/* CÓDIGO */}
+                <pre className="relative z-10 leading-relaxed right-20">
+{`
+    @Service
+                        public class PortfolioService {
+
+                    public Solution buildSolution(Scale scale) {
+                        return Solution.builder()
+                            .cleanArchitecture(true)
+                    .scalable(true)
+                            .maintainable(true)
+                            .cloudReady(true)
+                            .build();
+                }
+                }`}
+                <span className="ml-1 inline-block animate-caret">|</span>
+                </pre>
             </div>
         </div>
     </section>

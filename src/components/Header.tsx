@@ -28,7 +28,7 @@ export default function Header() {
   return (
     <header className="
       w-full fixed top-0 left-0 z-50
-      bg-[rgba(11,15,20,0.8)]
+      bg-[var(--bg-surface)]
       backdrop-blur-md
       border-b border-[var(--border-subtle)]
     ">
@@ -44,38 +44,39 @@ export default function Header() {
           <a
             href="#about"
             onClick={(e) => scrollToSection(e, "about")}
-            className="hover:text-[var(--accent)] transition-colors duration-200"
+            className="hover:text-[var(--text-secondary)] transition-colors duration-200"
           >
             Sobre
           </a>
           <a
             href="#skills"
             onClick={(e) => scrollToSection(e, "skills")}
-            className="hover:text-[var(--accent)] transition-colors duration-200"
+            className="hover:text-[var(--text-secondary)] transition-colors duration-200"
           >
             Habilidades
           </a>
 
-          <a
-            href="#projects"
-            onClick={(e) => scrollToSection(e, "projects")}
-            className="hover:text-[var(--accent)] transition-colors duration-200"
-          >
-            Projetos
-          </a>
 
           <a
             href="#experience"
             onClick={(e) => scrollToSection(e, "experience")}
-            className="hover:text-[var(--accent)] transition-colors duration-200"
+            className="hover:text-[var(--text-secondary)] transition-colors duration-200"
           >
             Experiência
           </a>
 
           <a
+            href="#projects"
+            onClick={(e) => scrollToSection(e, "projects")}
+            className="hover:text-[var(--text-secondary)] transition-colors duration-200"
+          >
+            Projetos
+          </a>
+          
+          <a
             href="#contact"
             onClick={(e) => scrollToSection(e, "contact")}
-            className="hover:text-[var(--accent)] transition-colors duration-200"
+            className="hover:text-[var(--text-secondary)] transition-colors duration-200"
           >
             Contato
           </a>
@@ -90,7 +91,7 @@ export default function Header() {
               bg-[var(--accent)]
               text-black text-sm font-medium
               focus:outline-none focus-visible:ring-2
-              focus-visible:ring-[var(--accent)]
+              focus-visible:ring-[var(--text-secondary)]
             "
           >
             Contato

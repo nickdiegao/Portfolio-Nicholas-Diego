@@ -4,20 +4,19 @@
 
 :root {
   /* Backgrounds */
-  --bg-main: #0b0f14;
-  --bg-surface: #111827;
-  --bg-muted: #0f172a;
+  --bg-main: #FAFAFB;
+  --bg-surface: #F2F1F7;
+  --bg-muted: #FFFFFF;
 
   /* Text */
-  --text-primary: #e5e7eb;
-  --text-secondary: #9ca3af;
-
+  --text-primary: #1E1E2E;
+  --text-secondary: #5E5E75;
 
   /* Accent */
-  --accent: #38bdf8;
+  --accent: #6C63FF;
 
   /* Border */
-  --border-subtle: #1f2937;
+  --border-subtle: #ECEBFA;
 }
 
 .reveal {
@@ -31,11 +30,11 @@ html {
 
 a {
   font-weight: 500;
-  color: #646cff;
+  color: #8B8BA7;
   text-decoration: inherit;
 }
 a:hover {
-  color: #535bf2;
+  color: #1a1a1a;
 }
 
 body {
@@ -79,4 +78,30 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+.animate-float {
+  animation: float 14s ease-in-out infinite;
+}
+
+@keyframes caret-blink {
+  0%, 50% {
+    opacity: 1;
+  }
+  50.01%, 100% {
+    opacity: 0;
+  }
+}
+
+.animate-caret {
+  animation: caret-blink 0.9s steps(1) infinite;
 }
