@@ -4,7 +4,7 @@ export default function Footer() {
             <div className="max-w-6xl mx-auto px-6 py-6 flex flex-col md:flex-row items-center justify-between gap-6">
 
                 <div className="text-center md:text-left">
-                    <p className="font-medium">
+                    <p className="text-sm font-semibold">
                         Nicholas Diego
                     </p>
                     <p className="text-sm text-[var(--text-secondary)]">
@@ -16,14 +16,16 @@ export default function Footer() {
                     <a
                         href="https://github.com/nickdiegao"
                         target="_blank"
-                        className="hover:text-[var(--accent)] transition-colors"
+                        className="text-[var(--text-secondary)] hover:text-[var(--accent)] transition-colors"
+                        rel="noopener noreferrer"
                     >
                         GitHub
                     </a>
                     <a
                         href="https://www.linkedin.com/in/nicholas-diego/"
                         target="_blank"
-                        className="hover:text-[var(--accent)] transition-colors"
+                        className="text-[var(--text-secondary)] hover:text-[var(--accent)] transition-colors"
+                        rel="noopener noreferrer"
                     >
                         Linkedin
                     </a>
