@@ -15,7 +15,7 @@ function App() {
     <div className="min-h-screen bg-[var(--color-bg)] text-[var(--text-primary)]">
       <Header />
 
-      <main className='pt-24'>
+      <main className="pt-24 relative overflow-hidden">
         <Hero />
         <About />
         <Skills />

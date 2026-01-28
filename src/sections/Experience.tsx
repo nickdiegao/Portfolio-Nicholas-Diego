@@ -8,7 +8,7 @@ export default function Experience() {
 
                 <div className="max-w-3xl text-[var(--text-secondary)] leading-relaxed space-y-4">
                     <p>
-                        Atuo como Técnico de Operações de TI, com experiência em suporte N1, N2 e N3,
+                        Atuo como Analista de Operações de TI, com experiência em suporte N1, N2 e N3,
                         atuando diretamente em ambientes corporativos e sistemas em produção.
                     </p>
                     <p>

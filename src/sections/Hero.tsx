@@ -84,15 +84,14 @@ export default function Hero() {
                 ref={titleRef}
                 className="text-3xl sm:text-5xl md:text-6xl font-bold leading-tight mb-6"
             >
-                Nicholas Diego
+                Olá, sou Nicholas Diego
             </h1>
 
             <h2
                 ref={subtitleRef}
                 className="text-lg sm:text-xl md:text-2xl text-[var(--text-secondary)] mb-8 max-w-xl"
             >
-                Desenvolvedor Backend com foco em Java e Spring Boot,
-                construindo soluções modernas e escaláveis.
+                Apaixonado por programação, com foco em desenvolvimento back-end e experiência em Java e Spring.
             </h2>
 
             <p
